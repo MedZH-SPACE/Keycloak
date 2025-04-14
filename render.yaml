@@ -9,6 +9,9 @@ services:
     env: docker
     healthCheckPath: /health
     dockerfilePath: Dockerfile  # Chez vers votre Dockerfile
+
+    # Configuration cruciale du port
+    port: 8080  # Keycloak écoute par défaut sur le port 8080
     
     # Variables d'environnement critiques
     envVars:
@@ -46,4 +49,6 @@ services:
       memoryMB: 512  # Minimum recommandé pour Keycloak
       cpuShares: 1000
 
+network:
+      servicePort: 8080  # Renforce la configuration du port
 # Pas besoin de section 'databases' car vous utilisez pca-pay-db existante

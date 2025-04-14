@@ -9,6 +9,8 @@ ENV KC_DB_PASSWORD=s9YVdczwKkSWkLQz7prcuyXvvcRiGFbi
 # Configuration réseau
 ENV KC_HOSTNAME=your-service-name.onrender.com
 ENV KC_PROXY=edge
+ENV KC_HOSTNAME_STRICT=false
+ENV KC_HTTP_ENABLED=true
 
 # Admin credentials
 ENV KEYCLOAK_ADMIN=admin
@@ -19,4 +21,4 @@ ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 
 RUN /opt/keycloak/bin/kc.sh build
-CMD ["start", "--optimized"]
+CMD ["start", "--optimized", "--http-enabled=true"]

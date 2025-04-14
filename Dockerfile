@@ -22,4 +22,4 @@ ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 
 RUN /opt/keycloak/bin/kc.sh build
-CMD ["start", "--optimized", "--http-enabled=true"]
+CMD ["start", "--http-enabled=true", "--hostname-strict=false", "--http-port=8080"]

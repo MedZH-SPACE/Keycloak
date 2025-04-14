@@ -1,7 +1,7 @@
 FROM quay.io/keycloak/keycloak:26.1.0
 
-FROM quay.io/keycloak/keycloak:24.0.1
-
+ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_PASSWORD=1234567890
 ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://dpg-cvuebl15pdvs73c27440-a:5432/pca_pay_db
 ENV KC_DB_USERNAME=admin

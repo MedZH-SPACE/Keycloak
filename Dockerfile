@@ -10,6 +10,7 @@ ENV KC_DB_PASSWORD=s9YVdczwKkSWkLQz7prcuyXvvcRiGFbi
 ENV KC_HOSTNAME=https://keycloak-fgi6.onrender.com
 ENV KC_PROXY=edge
 ENV PORT=8080
+EXPOSE 8080
 # Mode production
 ENV KC_METRICS_ENABLED=true
 ENV KC_HEALTH_ENABLED=true
@@ -18,5 +19,5 @@ ENV KC_HTTP_ENABLED=true
 
 
 # Démarrage avec la configuration
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start","--hostname-strict=false"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
 

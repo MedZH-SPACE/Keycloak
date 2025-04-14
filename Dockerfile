@@ -1,10 +1,15 @@
-FROM quay.io/keycloak/keycloak:26.1.0
+FROM quay.io/keycloak/keycloak:26.0.1
+
+ENV KC_DB=postgres
+ENV KC_DB_URL_HOST=$KC_DB_URL_HOST
+ENV KC_DB_URL_DATABASE=$KC_DB_URL_DATABASE
+ENV KC_DB_USERNAME=$KC_DB_USERNAME
+ENV KC_DB_PASSWORD=$KC_DB_PASSWORD
+
 
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=1234567890
 
 RUN /opt/keycloak/bin/kc.sh build
 
-EXPOSE 8080
-
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--hostname-strict=false"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]

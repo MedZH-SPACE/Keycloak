@@ -7,7 +7,7 @@ ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://dpg-cvuebl15pdvs73c27440-a:5432/pca_pay_db
 ENV KC_DB_USERNAME=admin
 ENV KC_DB_PASSWORD=s9YVdczwKkSWkLQz7prcuyXvvcRiGFbi
-ENV KC_HOSTNAME=https://keycloak-dqid.onrender.com
+ENV KC_HOSTNAME=https://keycloak-fgi6.onrender.com
 ENV KC_PROXY=edge
 EXPOSE 8080
 ENV PORT=8080

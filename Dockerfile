@@ -1,4 +1,4 @@
-FROM quay.io/keycloak/keycloak:latest
+FROM quay.io/keycloak/keycloak:26.1.0
 
 # Configuration de la base de données
 ENV KC_DB=postgres
@@ -7,7 +7,7 @@ ENV KC_DB_USERNAME=admin
 ENV KC_DB_PASSWORD=s9YVdczwKkSWkLQz7prcuyXvvcRiGFbi
 
 # Configuration réseau
-ENV KC_HOSTNAME=your-service-name.onrender.com  # À remplacer après déploiement
+ENV KC_HOSTNAME=your-service-name.onrender.com
 ENV KC_PROXY=edge
 
 # Admin credentials

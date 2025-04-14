@@ -12,6 +12,7 @@ EXPOSE 8080
 # Mode production
 ENV KC_METRICS_ENABLED=true
 ENV KC_HEALTH_ENABLED=true
+ENV KC_HTTP_ENABLED=true
 
 # Démarrage avec la configuration
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]

@@ -6,10 +6,13 @@ ENV KC_DB_URL_DATABASE=$KC_DB_URL_DATABASE
 ENV KC_DB_USERNAME=$KC_DB_USERNAME
 ENV KC_DB_PASSWORD=$KC_DB_PASSWORD
 
-
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=1234567890
 
+# Activer HTTP pour Render
+ENV KC_HTTP_ENABLED=true
+ENV KC_HOSTNAME_STRICT=false
+
 RUN /opt/keycloak/bin/kc.sh build
 
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]

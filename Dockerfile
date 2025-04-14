@@ -1,13 +1,8 @@
-# Utilise l'image officielle Keycloak
 FROM quay.io/keycloak/keycloak:24.0.1
 
-# Variables d’environnement par défaut
-ENV KC_DB=postgres
+# COPY AVANT le build (pas nécessaire ici car on ne personnalise rien)
 
-# Build Keycloak
-RUN /opt/keycloak/bin/kc.sh build
-
-# Commande de démarrage
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]
+# En mode production, on build AVEC les variables d'env présentes à l'exécution
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
 
 

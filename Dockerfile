@@ -10,6 +10,7 @@ ENV KC_DB_PASSWORD=s9YVdczwKkSWkLQz7prcuyXvvcRiGFbi
 ENV KC_HOSTNAME=https://keycloak-dqid.onrender.com
 ENV KC_PROXY=edge
 EXPOSE 8080
+ENV PORT=8080
 # Mode production
 ENV KC_METRICS_ENABLED=true
 ENV KC_HEALTH_ENABLED=true

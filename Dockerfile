@@ -1,8 +1,10 @@
 FROM quay.io/keycloak/keycloak:24.0.1
 
-# COPY AVANT le build (pas nécessaire ici car on ne personnalise rien)
+ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-# En mode production, on build AVEC les variables d'env présentes à l'exécution
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
+# Optionnel si tu veux ajouter des extensions/thèmes etc.
 
+RUN /opt/keycloak/bin/kc.sh build
 
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]

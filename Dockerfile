@@ -3,8 +3,8 @@ FROM quay.io/keycloak/keycloak:24.0.1
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-# Optionnel si tu veux ajouter des extensions/thèmes etc.
-
+# Build the Keycloak distribution
 RUN /opt/keycloak/bin/kc.sh build
 
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--cluster", "none"]
+# Use cache=local to disable clustering and avoid cookie mismatch warnings
+CMD ["/opt/keycloak/bin/kc.sh", "start", "--cache=local"]
